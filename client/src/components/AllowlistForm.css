@@ -1,19 +1,35 @@
 h1 {
-  border-bottom: 1px solid white;
-  color: #3d3d3d;
+  color: white;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 34px;
   font-weight: 600;
-  line-height: 24px;
+  max-width: 45%;
   text-align: center;
 }
 
+p {
+  color: white;
+  font-size: 14px;
+  max-width: 40%;
+  align-self: center;
+  text-align: center;
+}
+
+.highlight {
+  color: #FF3AF0
+}
+
 .header {
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .successMessage {
-  background-color: #e2fee2;
+  display: flex;
+  justify-content: center;
+  background-color: #EBFF00;
   border: solid 1px;
   border-color: #000000;
   margin-bottom: 10px;
@@ -21,15 +37,18 @@ h1 {
 }
 
 .errorMessage {
-  background-color: #fe6f5e;
+  display: flex;
+  justify-content: center;
+  background-color: #FF004D;
   border: solid 1px;
   border-color: #000000;
   margin: 10px;
 }
 
 form {
-  background: white;
-  border: 1px solid #dedede;
+  background: #34353E;
+  /* border: 1px solid #dedede; */
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -40,8 +59,10 @@ form {
 }
 
 input {
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
+  border: 2px solid #93949D;
+  color: white;
+  background: #34353E;
+  border-radius: 5px;
   box-sizing: border-box;
   padding: 10px;
   width: 100%;
@@ -49,7 +70,7 @@ input {
 }
 
 label {
-  color: #3d3d3d;
+  color: #fff;
   display: block;
   font-family: sans-serif;
   font-size: 14px;
@@ -67,9 +88,11 @@ label {
 }
 
 .submitButton {
-  background-color: #6976d9;
+  background-color: #FF3AF0;
+  border: 0px;
   color: white;
   font-family: sans-serif;
   font-size: 14px;
+  font-weight: 700;
   margin: 20px 0px;
 }

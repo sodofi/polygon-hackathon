@@ -38,13 +38,16 @@ export default function AllowlistForm(props) {
     await addDocument(uuid, data.firstName, data.lastName, data.walletAddress)
       .then((res) => {
         if (!res.ok && res.status >= 400) {
+          console.log('test')
           setFormFail(true);
           return;
         } else {
           // add stuff to contract
           props.contract.methods
             ._createAllowlister(uuid)
+            console.log('test')
             .send({ from: props.accounts[0] })
+            console.log('test')
             .then(() => {
               setFirstName(data.firstName);
               setLastName(data.lastName);
@@ -59,6 +62,7 @@ export default function AllowlistForm(props) {
       })
       .catch(() => {
         setFormFail(true);
+        console.log(uuid, data.firstName, data.lastName, data.walletAddress)
         return;
       });
   }
@@ -75,17 +79,15 @@ export default function AllowlistForm(props) {
       )}
       {formFail && (
         <div className="errorMessage">
-          <p>Failed to submit allowlist entry. Please try again.</p>
+          <p>Failed to submit allowlist entry. Please try again!</p>
         </div>
       )}
-      <form onSubmit={handleSubmit((data) => submitForm(data))}>
-        <div className="header">
-          <h1>Allowlist Form</h1>
-          <p>
-            Please fill out this form to get allowlisted for this exclusive
-            project.
+      <div className="header">
+          <h1><span className='highlight'>Safeguarding</span> personal user information</h1>
+          <p>For dApps and DAOs to access private user data without storing it publicly on the blockchain. Built with React, Polygon, and Fauna.
           </p>
         </div>
+      <form onSubmit={handleSubmit((data) => submitForm(data))}>
         <label htmlFor="firstName">First Name</label>
         <input
           id="firstName"

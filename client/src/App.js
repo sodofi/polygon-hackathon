@@ -41,11 +41,18 @@ class App extends Component {
       return <div>Loading Web3, accounts, and contract...</div>;
     }
     return (
-      <div className="App">
-        <AllowlistForm
-          contract={this.state.contract}
-          accounts={this.state.accounts}
-        />
+      <div className="wrapper">
+        <div className="header">
+          <p>DewItDesigns</p>
+          <p>More</p>
+          <button>Clone GitHub Repo</button>
+        </div>
+        <div className="App">
+          <AllowlistForm
+            contract={this.state.contract}
+            accounts={this.state.accounts}
+          />
+        </div>
       </div>
     );
   }
